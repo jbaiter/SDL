@@ -2166,6 +2166,11 @@ SDL_GetJoystickGameControllerTypeFromVIDPID(Uint16 vendor, Uint16 product, const
                 type = SDL_CONTROLLER_TYPE_UNKNOWN;
             }
             break;
+        case k_eControllerType_SteamController:
+        case k_eControllerType_SteamControllerV2:
+        case k_eControllerType_SteamDeck:
+            type = SDL_CONTROLLER_TYPE_STEAM;
+            break;
         default:
             break;
         }
@@ -2340,7 +2345,8 @@ SDL_IsJoystickSteamController(Uint16 vendor_id, Uint16 product_id)
 {
     EControllerType eType = GuessControllerType(vendor_id, product_id);
     return (eType == k_eControllerType_SteamController ||
-            eType == k_eControllerType_SteamControllerV2);
+            eType == k_eControllerType_SteamControllerV2 ||
+            eType == k_eControllerType_SteamDeck);
 }
 
 SDL_bool

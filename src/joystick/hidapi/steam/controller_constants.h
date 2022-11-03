@@ -47,6 +47,7 @@ enum ValveControllerPID
 	D0G_BLE_PID				  = 0x1105,
 	D0G_BLE2_PID			  = 0x1106,
 	D0GGLE_PID                = 0x1142,
+	DECK_PID 				  = 0x1205,
 };
 
 // This enum contains all of the messages exchanged between the host and the target (only add to this enum and never change the order)
